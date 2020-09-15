@@ -103,7 +103,19 @@
 #endif
 
 #ifndef CLIENT_PASS
-  #define CLIENT_PASS ""
+  #define CLIENT_PASS DEFAULT_CLIENT_PASS
+#endif
+
+#ifndef AP_SSID
+  #define AP_SSID DEFAULT_AP_SSID
+#endif
+
+#ifndef AP_PASS
+  #define AP_PASS DEFAULT_AP_PASS
+#endif
+
+#ifndef OTA_PASS
+  #define OTA_PASS DEFAULT_OTA_PASS
 #endif
 
 #if IR_PIN < 0
@@ -161,8 +173,8 @@ WLED_GLOBAL char versionString[] _INIT("0.10.2");
 #define WLED_CODENAME "Fumikiri"
 
 // AP and OTA default passwords (for maximum security change them!)
-WLED_GLOBAL char apPass[65]  _INIT(DEFAULT_AP_PASS);
-WLED_GLOBAL char otaPass[33] _INIT(DEFAULT_OTA_PASS);
+WLED_GLOBAL char apPass[65]  _INIT(AP_PASS);
+WLED_GLOBAL char otaPass[33] _INIT(OTA_PASS);
 
 // Hardware CONFIG (only changeble HERE, not at runtime)
 // LED strip pin, button pin and IR pin changeable in NpbWrapper.h!
@@ -512,7 +524,7 @@ WLED_GLOBAL UsermodManager usermods _INIT(UsermodManager());
 
 
 #define WLED_CONNECTED (WiFi.status() == WL_CONNECTED)
-#define WLED_WIFI_CONFIGURED (strlen(clientSSID) >= 1 && strcmp(clientSSID, DEFAULT_CLIENT_SSID) != 0)
+#define WLED_WIFI_CONFIGURED (strlen(clientSSID) >= 1 && strcmp(clientSSID, CLIENT_SSID) != 0)
 #define WLED_MQTT_CONNECTED (mqtt != nullptr && mqtt->connected())
 
 // append new c string to temp buffer efficiently

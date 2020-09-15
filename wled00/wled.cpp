@@ -175,7 +175,7 @@ void WLED::setup()
   beginStrip();
   userSetup();
   usermods.setup();
-  if (strcmp(clientSSID, DEFAULT_CLIENT_SSID) == 0)
+  if (strcmp(clientSSID, CLIENT_SSID) == 0)
     showWelcomePage = true;
   WiFi.persistent(false);
 
@@ -260,9 +260,9 @@ void WLED::initAP(bool resetAP)
     return;
 
   if (!apSSID[0] || resetAP)
-    strcpy(apSSID, "WLED-AP");
+    strcpy(apSSID, AP_SSID);
   if (resetAP)
-    strcpy(apPass, DEFAULT_AP_PASS);
+    strcpy(apPass, AP_PASS);
   DEBUG_PRINT("Opening access point ");
   DEBUG_PRINTLN(apSSID);
   WiFi.softAPConfig(IPAddress(4, 3, 2, 1), IPAddress(4, 3, 2, 1), IPAddress(255, 255, 255, 0));
