@@ -11,7 +11,10 @@
  */
 //#include "usermod_v2_example.h"
 #ifdef USERMOD_DALLASTEMPERATURE
-#include "../usermods/Temperature/usermod_temperature.h"
+  #include "../usermods/Temperature/usermod_temperature.h"
+#endif
+#ifdef USERMOD_I2C_ENCODER
+  #include "../usermods/i2c_encoder/usermod_i2c_encoder.h"
 #endif
 //#include "usermod_v2_empty.h"
 
@@ -23,8 +26,11 @@ void registerUsermods()
    * \/ \/ \/
    */
   //usermods.add(new MyExampleUsermod());
-  #ifdef USERMOD_DALLASTEMPERATURE
+#ifdef USERMOD_DALLASTEMPERATURE
   usermods.add(new UsermodTemperature());
-  #endif
+#endif
+#ifdef USERMOD_I2C_ENCODER
+  usermods.add(new I2cEncoder());
+#endif
   //usermods.add(new UsermodRenameMe());
 }
