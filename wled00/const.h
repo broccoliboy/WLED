@@ -71,6 +71,7 @@
 #define DMX_MODE_EFFECT           3            //trigger standalone effects of WLED (11 channels)
 #define DMX_MODE_MULTIPLE_RGB     4            //every LED is addressed with its own RGB (ledCount * 3 channels)
 #define DMX_MODE_MULTIPLE_DRGB    5            //every LED is addressed with its own RGB and share a master dimmer (ledCount * 3 + 1 channels)
+#define DMX_MODE_MULTIPLE_RGBW    6            //every LED is addressed with its own RGBW (ledCount * 4 channels)
 
 //Light capability byte (unused) 0bRRCCTTTT
 //bits 0/1/2/3: specifies a type of LED driver. A single "driver" may have different chip models but must have the same protocol/behavior
@@ -102,6 +103,15 @@
 #define TYPE_LPD8806             52
 #define TYPE_P9813               53
 #define TYPE_TM1814              54
+
+
+//Color orders
+#define COL_ORDER_GRB             0           //GRB(w),defaut
+#define COL_ORDER_RGB             1           //common for WS2811
+#define COL_ORDER_BRG             2
+#define COL_ORDER_RBG             3
+#define COL_ORDER_BGR             4
+#define COL_ORDER_GBR             5
 
 
 //Button type

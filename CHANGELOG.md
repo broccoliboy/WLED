@@ -2,6 +2,33 @@
 
 ### WLED version 0.11.0
 
+#### Build 2012020
+
+-   UDP `parsePacket()` with sync disabled (#1390)
+-   Added Multi RGBW DMX mode (PR #1383)
+
+#### Build 2012010
+
+-   Fixed compilation for analog (PWM) LEDs
+
+#### Build 2011290
+
+-   Release of WLED 0.11.0 "Mirai"
+-   Workaround for weird empty %f Espalexa issue
+-   Fixed crash on saving preset with HTTP API `PS`
+-   Improved performance for color changes in non-main segment
+
+#### Build 2011270
+
+-   Added tooltips for speed and intensity sliders (PR #1378)
+-   Moved color order to NpbWrapper.h
+-   Added compile time define to override the color order for a specific range
+
+#### Build 2011260
+
+-   Add `live` property to state, allowing toggling of realtime (not incl. in state resp.)
+-   PIO environment changes
+
 #### Build 2011230
 
 -   Version bump to 0.11.0 "Mirai"
